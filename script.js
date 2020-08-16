@@ -34,11 +34,14 @@ $(document).ready(function () {
     $(spanEl).text(time);
     // $(spanEl).addClass("time-block");
     $(spanEl).addClass("hour");
+    $(spanEl).addClass("col-1");
     $(divEl).append(inputEl);
     $(inputEl).addClass("description");
+    $(inputEl).addClass("col-6");
     $(divEl).append(buttonEl);
-    $(buttonEl).addClass("saveBtn");
     $(buttonEl).text("save placeholder");
+    $(buttonEl).addClass("saveBtn");
+    $(buttonEl).addClass("col-2");
 
   });
 });
