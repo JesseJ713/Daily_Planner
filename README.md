@@ -1,6 +1,6 @@
 # Daily_Planner
 
-(Insert URL HERe)
+(Insert URL HERE)
 
 (Insert Screenshot here)
 
@@ -13,3 +13,4 @@ With this program, the user will be allowed to submit entries into a daily plann
 
 ## Project Status
 
+Bit of a late start, but I have just finished pseudocoding and my plan is to tackle this project without touching the HTML & CSS. I want to solidify my knowledge manipulating the DOM and using jQuery to do so. I began by adding and establishing the current time and date onto the page.
