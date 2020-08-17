@@ -13,38 +13,28 @@ $(document).ready(function () {
   // This is running the function through each hour in the global variable and formatting it into the hour and AM PM
   hours.forEach(function (time, indexNum) {
 
-    var time = [];
-    time.push(moment().hour(time).format("h A"));
-    // console.log(parseInt(time));
-    // console.log(moment().hour());
+    var timeFormat = [];
+    timeFormat.push(moment().hour(time).format("h a"));
+
 
     // Declaring new element variables
-    var divEl = $("<div>");
-    var spanEl = $("<span>");
-    var inputEl = $("<input>");
-    var buttonEl = $("<button>");
+    var divEl = $("<div class='row'>");
+    var spanEl = $("<span class='hour col-1'>");
+    var inputEl = $("<input class='description col-9'>");
+    var buttonEl = $("<button class='saveBtn col-2'>");
 
     // Appending new elements onto the page
     $(".container").append(divEl);
-    // $(".container").addClass("row");
-
-    $(divEl).addClass("row");
-    // $(divEl).addClass("time-block");
     $(divEl).attr("data-val", indexNum);
+
     $(divEl).append(spanEl);
-    $(spanEl).text(time);
-    // $(spanEl).addClass("time-block");
-    $(spanEl).addClass("hour");
-    $(spanEl).addClass("col-1");
+    $(spanEl).text(timeFormat);
+
     $(divEl).append(inputEl);
-    $(inputEl).addClass("description");
-    $(inputEl).addClass("col-9");
     $(inputEl).attr("data", "time-block #" + indexNum);
+
     $(divEl).append(buttonEl);
     $(buttonEl).text("💾");
-    $(buttonEl).addClass("saveBtn");
-    $(buttonEl).addClass("col-2");
-
 
   });
 
