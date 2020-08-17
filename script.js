@@ -6,7 +6,7 @@ $(document).ready(function () {
   // var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
 
   setInterval(function () {
-    var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+    var currentDate = moment().format(" dddd ~ MMMM Do, YYYY ~ h:mm:ss a");
     $("#currentDay").html(currentDate);
   }, 100);
 
@@ -32,6 +32,11 @@ $(document).ready(function () {
 
     $(divEl).append(inputEl);
     $(inputEl).attr("data", "time-block #" + indexNum);
+    var inputValue = $(inputEl).attr("data");
+    var fromStorage = localStorage.getItem(inputValue);
+
+    $(inputEl).val(fromStorage);
+    // console.log(inputValue);
 
     $(divEl).append(buttonEl);
     $(buttonEl).text("💾");
@@ -46,8 +51,8 @@ $(".saveBtn").on("click", function () {
     var value = $(this).siblings("input").val();
     // console.log(input, value);
     localStorage.setItem(input, value);
-    var fromStorage = localStorage.getItem(input);
-    $(this).siblings("input").text(fromStorage);
+    // var fromStorage = localStorage.getItem(input);
+    // $(this).siblings("input").text(fromStorage);
 })
 
 });
