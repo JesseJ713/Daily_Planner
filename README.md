@@ -16,3 +16,5 @@ With this program, the user will be allowed to submit entries into a daily plann
 Bit of a late start, but I have just finished pseudocoding and my plan is to tackle this project without touching the HTML & CSS. I want to solidify my knowledge manipulating the DOM and using jQuery to do so. I began by adding and establishing the current time and date onto the page.
 
 Creating the skeleton/layout of the program was more intuitive than anticipated. Using jQuery helped cut a lot of the code out of the equation. Now I need to focus on representing the time correctly within the schedule part of the program, laying out the body efficiently, and manipulate local storage correctly.
+
+I've effectively layed out the body by manipulating columns within Bootstrap. I was able to store the data inputted in the body, but need to work on having it persist as the user leaves the page. I also still need to work on portraying the hours correctly from the global variable I have set up. I will spend a little more time on it before reaching out for help.

@@ -11,7 +11,7 @@ $(document).ready(function () {
   }, 100);
 
   // This is running the function through each hour in the global variable and formatting it into the hour and AM PM
-  hours.forEach(function (time, index) {
+  hours.forEach(function (time, indexNum) {
 
     var time = [];
     time.push(moment().hour(time).format("h A"));
@@ -29,7 +29,8 @@ $(document).ready(function () {
     // $(".container").addClass("row");
 
     $(divEl).addClass("row");
-    // $(divEl).attr("data-val", index);
+    // $(divEl).addClass("time-block");
+    $(divEl).attr("data-val", indexNum);
     $(divEl).append(spanEl);
     $(spanEl).text(time);
     // $(spanEl).addClass("time-block");
@@ -37,11 +38,26 @@ $(document).ready(function () {
     $(spanEl).addClass("col-1");
     $(divEl).append(inputEl);
     $(inputEl).addClass("description");
-    $(inputEl).addClass("col-6");
+    $(inputEl).addClass("col-9");
+    $(inputEl).attr("data", "time-block #" + indexNum);
     $(divEl).append(buttonEl);
-    $(buttonEl).text("save placeholder");
+    $(buttonEl).text("💾");
     $(buttonEl).addClass("saveBtn");
     $(buttonEl).addClass("col-2");
 
+
   });
+
+// Clicking save in order to have data persist in Local Storage
+$(".saveBtn").on("click", function () {
+    event.preventDefault();
+
+    var input = $(this).siblings("input").attr("data");
+    var value = $(this).siblings("input").val();
+    // console.log(input, value);
+    localStorage.setItem(input, value);
+    var fromStorage = localStorage.getItem(input);
+    $(this).siblings("input").text(fromStorage);
+})
+
 });
