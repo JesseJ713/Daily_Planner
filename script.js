@@ -21,7 +21,7 @@ $(document).ready(function () {
     // Declaring new element variables
     var divEl = $("<div class='row'>");
     var spanEl = $("<span class='hour col-1'>");
-    var inputEl = $("<input class='description col-9'>");
+    var inputEl = $("<input class='description col-7'>");
     var buttonEl = $("<button class='saveBtn col-2'>");
 
     // Appending new elements onto the page
