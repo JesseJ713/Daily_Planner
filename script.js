@@ -2,9 +2,10 @@ $(document).ready(function () {
   // Setting a global array for hours referencing the 24 hour method
   var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-  // Establishing current date from DOM
+  // Setting a global variable for reference when we color the time blocks based off the past, present, future
   var currentHour = moment().format("h");
 
+  // Establishing current date from DOM
   setInterval(function () {
     var currentDate = moment().format(" dddd ~ MMMM Do, YYYY ~ h:mm:ss a");
     $("#currentDay").html(currentDate);
