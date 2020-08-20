@@ -3,7 +3,7 @@ $(document).ready(function () {
   var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
   // Establishing current date from DOM
-  // var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+  var currentHour = moment().format("h");
 
   setInterval(function () {
     var currentDate = moment().format(" dddd ~ MMMM Do, YYYY ~ h:mm:ss a");
@@ -34,25 +34,29 @@ $(document).ready(function () {
     $(inputEl).attr("data", "time-block #" + indexNum);
     var inputValue = $(inputEl).attr("data");
     var fromStorage = localStorage.getItem(inputValue);
-
     $(inputEl).val(fromStorage);
-    // console.log(inputValue);
 
     $(divEl).append(buttonEl);
     $(buttonEl).text("💾");
 
+
+    // Applying colors to Time Blocks relative to the actual hour
+    if (hours[indexNum] > currentHour) {
+        $(inputEl).addClass("past");
+    } else if (hours[indexNum] < currentHour) {
+        $(inputEl).addClass("future");
+    } else $(inputEl).addClass("present")
+
+
   });
 
-// Clicking save in order to have data persist in Local Storage
+    // Clicking save will have data persist in Local Storage
 $(".saveBtn").on("click", function () {
     event.preventDefault();
 
     var input = $(this).siblings("input").attr("data");
     var value = $(this).siblings("input").val();
-    // console.log(input, value);
     localStorage.setItem(input, value);
-    // var fromStorage = localStorage.getItem(input);
-    // $(this).siblings("input").text(fromStorage);
 })
 
 });
